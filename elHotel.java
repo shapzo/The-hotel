@@ -3,7 +3,7 @@ package POO;
 /* paneles color negro *
  * paneles centrados al centro *
  * fuentes usadas Tahoma, Segoe UI Semibold, Lucida Console, Candara Regular *
- * imagenes con un tamaño no mayor a -300 px,  100 px- salvo algunas ecepciones *
+ * imagenes con un tamaï¿½o no mayor a -300 px,  100 px- salvo algunas ecepciones *
  * paneles centralisados y sin posibilidad de redimensionarse -esto se hace para que no pierda estetica el programa- *
  */
 
@@ -54,8 +54,8 @@ public class elHotel extends JFrame {
 	 */
 	Checkbox a1 = new Checkbox("Vino Espumoso Lunato Lambrusco Rosado - 750 ml - 750$");
 	Checkbox a2 = new Checkbox("Vino Tinto Campo Viejo Gran Reserva Rioja - 750 ml - 1750$");
-	Checkbox a3 = new Checkbox("Oporto Royal 10 Años - 750 ml - 3860$");
-	Checkbox a4 = new Checkbox("Whisky Chivas Regal 12 años - 750 ml - 6380$");
+	Checkbox a3 = new Checkbox("Oporto Royal 10 Aï¿½os - 750 ml - 3860$");
+	Checkbox a4 = new Checkbox("Whisky Chivas Regal 12 aï¿½os - 750 ml - 6380$");
 	Checkbox a5 = new Checkbox("Brandy Gran Duque D Alba - 700 ml - 10580$");
 	Checkbox b1 = new Checkbox("Empanadas - 100$");
 	Checkbox b2 = new Checkbox("Jugo de carne - 300$");
@@ -71,12 +71,12 @@ public class elHotel extends JFrame {
 	/* variables de la guarderia */
 
 	ButtonGroup grupoDeBotonesguarderia = new ButtonGroup(); // se inicializan las variables
-	Checkbox guarderiaA1 = new Checkbox("1 a 5 niños"); // el static es para poder llamar los valores que se guardan en
+	Checkbox guarderiaA1 = new Checkbox("1 a 5 niï¿½os"); // el static es para poder llamar los valores que se guardan en
 														// ellos
-	Checkbox guarderiaA2 = new Checkbox("5 niños o mas");
-	Checkbox guarderiaA3 = new Checkbox("1 a 3 años de edad");
-	Checkbox guarderiaA4 = new Checkbox("4 a 7 años de edad");
-	Checkbox guarderiaA5 = new Checkbox("7 a 11 años de edad");
+	Checkbox guarderiaA2 = new Checkbox("5 niï¿½os o mas");
+	Checkbox guarderiaA3 = new Checkbox("1 a 3 aï¿½os de edad");
+	Checkbox guarderiaA4 = new Checkbox("4 a 7 aï¿½os de edad");
+	Checkbox guarderiaA5 = new Checkbox("7 a 11 aï¿½os de edad");
 
 	/* variables de los trips Fam */
 	ButtonGroup grupoDeTrips = new ButtonGroup();
@@ -128,7 +128,7 @@ public class elHotel extends JFrame {
 
 		zona.add(p);
 
-		etiqueta = new JLabel(new ImageIcon("logo.jpg"));
+		etiqueta = new JLabel(new ImageIcon("Images/logo.jpg"));
 		etiqueta1 = new JLabel("Usuario");
 		campo = new JTextField();
 
@@ -175,12 +175,12 @@ public class elHotel extends JFrame {
 				if (cad1.compareTo(s1) == 0)/* COMPARA SI LA CLAVE ES CORRECTA */
 				{
 					JOptionPane.showMessageDialog(null,
-							"Contraseña correcta ");/* SI LA CLAVE ES INCORRECTA TERMINA EL PROGRAMA */
+							"Contraseï¿½a correcta ");/* SI LA CLAVE ES INCORRECTA TERMINA EL PROGRAMA */
 					servicios abrir = new servicios(); // se manda a llamar a la clase servicios
 					abrir.main(servicios);
 				} // fin
 				else {
-					JOptionPane.showMessageDialog(null, "Contaseña incorrecta ");
+					JOptionPane.showMessageDialog(null, "Contaseï¿½a incorrecta ");
 				}
 
 			}
@@ -248,15 +248,15 @@ public class elHotel extends JFrame {
 			boton5 = new JButton("Room service");
 			boton6 = new JButton("Forma de pago");
 
-			image = new JLabel(new ImageIcon("reservacion.jpg"));
-			image1 = new JLabel(new ImageIcon("habitacion.jpg"));
-			image2 = new JLabel(new ImageIcon("restaurante.jpg"));
-			image3 = new JLabel(new ImageIcon("guarderia.jpg"));
-			image4 = new JLabel(new ImageIcon("famtrip.jpg"));
-			image5 = new JLabel(new ImageIcon("romm.jpg"));
-			image6 = new JLabel(new ImageIcon("pago.png"));
+			image = new JLabel(new ImageIcon("Images/reservacion.jpg"));
+			image1 = new JLabel(new ImageIcon("Images/habitacion.jpg"));
+			image2 = new JLabel(new ImageIcon("Images/restaurante.jpg"));
+			image3 = new JLabel(new ImageIcon("Images/guarderia.jpg"));
+			image4 = new JLabel(new ImageIcon("Images/famtrip.jpg"));
+			image5 = new JLabel(new ImageIcon("Images/romm.jpg"));
+			image6 = new JLabel(new ImageIcon("Images/pago.png"));
 
-			salir = new JButton(new ImageIcon("atras.png"));
+			salir = new JButton(new ImageIcon("Images/atras.png"));
 
 			/****************** personalisacion ******************/
 			boton.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
@@ -434,11 +434,11 @@ public class elHotel extends JFrame {
 
 			letrero = new JLabel("Habitaciones");
 
-			image = new JLabel(new ImageIcon("cuarto1.jpg")); // se crean los constructores y se les asigna su funcion
+			image = new JLabel(new ImageIcon("Images/cuarto1.jpg")); // se crean los constructores y se les asigna su funcion
 																// si son
-			image1 = new JLabel(new ImageIcon("cuarto2.jpg")); // imagenes o dicen informacion
-			image2 = new JLabel(new ImageIcon("cuarto3.png"));
-			salir = new JButton(new ImageIcon("atras.png"));
+			image1 = new JLabel(new ImageIcon("Images/cuarto2.jpg")); // imagenes o dicen informacion
+			image2 = new JLabel(new ImageIcon("Images/cuarto3.png"));
+			salir = new JButton(new ImageIcon("Images/atras.png"));
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
@@ -563,7 +563,7 @@ public class elHotel extends JFrame {
 			fechsal = new JTextField();
 			Orig = new JTextField();
 
-			Salir = new JButton(new ImageIcon("atras.png"));
+			Salir = new JButton(new ImageIcon("Images/atras.png"));
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
@@ -691,7 +691,7 @@ public class elHotel extends JFrame {
 		JButton image2;
 		JLabel letrero;
 
-		JButton x = new JButton(new ImageIcon("atras.png"));
+		JButton x = new JButton(new ImageIcon("Images/atras.png"));
 
 		JLabel etq1 = new JLabel("desayuno");
 
@@ -700,7 +700,7 @@ public class elHotel extends JFrame {
 		public restaurant() {
 
 			setTitle("Restaurante Real Hotel"); // asignaciion del titulo
-			setSize(650, 650); // tamaño del panel
+			setSize(650, 650); // tamaï¿½o del panel
 			p.setBackground(Color.black); // se le da color al panel
 			setLocationRelativeTo(null);
 			;
@@ -708,12 +708,12 @@ public class elHotel extends JFrame {
 
 			Container zona = getContentPane();
 
-			zona.add(p); // zona es para hacer referencia al contenido y signofica añadir al panel el
+			zona.add(p); // zona es para hacer referencia al contenido y signofica aï¿½adir al panel el
 // contenido de zona
 
-			image = new JButton(new ImageIcon("restor1.jpg")); // se le asignan valores a los elementos
-			image1 = new JButton(new ImageIcon("restor2.jpg"));
-			image2 = new JButton(new ImageIcon("restor3.jpg"));
+			image = new JButton(new ImageIcon("Images/restor1.jpg")); // se le asignan valores a los elementos
+			image1 = new JButton(new ImageIcon("Images/restor2.jpg"));
+			image2 = new JButton(new ImageIcon("Images/restor3.jpg"));
 
 			letrero = new JLabel("Restaurante");
 
@@ -779,12 +779,12 @@ public class elHotel extends JFrame {
 
 			a.setBounds(30, 60, 170, 30); // el setBounds es para posicionar los botones dentro del panel poniendo
 											// cordenadas
-			b.setBounds(240, 60, 100, 30); // y darle tamaño al los botones
+			b.setBounds(240, 60, 100, 30); // y darle tamaï¿½o al los botones
 			c.setBounds(390, 60, 170, 30); // el primer numero es para hacerlo a la izquierd a o la dercha, el 2 es para
-											// harriba o abajo, el 3 es para el tmaño a lo largo del boton, el 4 es para
-											// el tamaño del boton a lo ancho
+											// harriba o abajo, el 3 es para el tmaï¿½o a lo largo del boton, el 4 es para
+											// el tamaï¿½o del boton a lo ancho
 
-			p.add(a); // para añadoir a boton -a- al panel
+			p.add(a); // para aï¿½adoir a boton -a- al panel
 			p.add(b);
 			p.add(c);
 			p.add(letrero);
@@ -792,10 +792,10 @@ public class elHotel extends JFrame {
 			grupoDeBotonesRestaurante.add(a);
 			grupoDeBotonesRestaurante.add(b);
 			grupoDeBotonesRestaurante.add(c);
-			a.addActionListener(new ActionListener() { // añadir a la lista
+			a.addActionListener(new ActionListener() { // aï¿½adir a la lista
 				public void actionPerformed(ActionEvent v) { // es la accion de como va a trabajar, del evento a usar
 // por Ejm al pasar el mouse cambie de color
-					p.add(image); // para añadoir a boton -a- al panel
+					p.add(image); // para aï¿½adoir a boton -a- al panel
 					p.add(a1);
 					p.add(a2);
 					p.add(a3);
@@ -888,10 +888,10 @@ public class elHotel extends JFrame {
 			setLocationRelativeTo(null);
 			zona.add(p); // espara que aparesca todo en el panel
 
-			salir = new JButton(new ImageIcon("atras.png")); // se les asigna su funcion a los constructores
+			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
 			Letrero = new JLabel("Horario de 8pm a 6am");
-			boton2 = new JButton("No de niños");
-			boton3 = new JButton("Edad de los niños");
+			boton2 = new JButton("No de niï¿½os");
+			boton3 = new JButton("Edad de los niï¿½os");
 
 			/************** personalisacion *****************/
 			Letrero.setForeground(Color.lightGray);
@@ -1003,17 +1003,17 @@ public class elHotel extends JFrame {
 
 			zona.add(p);
 
-			image = new JLabel(new ImageIcon("trip1.jpg"));
-			image1 = new JLabel(new ImageIcon("trip2.jpg"));
-			image2 = new JLabel(new ImageIcon("trip3.jpg"));
+			image = new JLabel(new ImageIcon("Images/trip1.jpg"));
+			image1 = new JLabel(new ImageIcon("Images/trip2.jpg"));
+			image2 = new JLabel(new ImageIcon("Images/trip3.jpg"));
 
 			boton = new JButton("Globo"); // hay k poner imagenes alucivas
 			boton1 = new JButton("Camioneta"); // para usar el formato PNG se ponen dobles diagonales
 			boton2 = new JButton("Lancha");
 
-			salir = new JButton(new ImageIcon("atras.png"));
+			salir = new JButton(new ImageIcon("Images/atras.png"));
 
-			letrero = new JLabel("Trip´s Fam");
+			letrero = new JLabel("Tripï¿½s Fam");
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
@@ -1075,7 +1075,7 @@ public class elHotel extends JFrame {
 			p.add(salir);
 			p.add(letrero);
 
-			boton.addActionListener(new ActionListener() { // añadir a la lista
+			boton.addActionListener(new ActionListener() { // aï¿½adir a la lista
 				public void actionPerformed(ActionEvent v) {
 
 					tripSa1.setBounds(50, 130, 100, 30);
@@ -1090,7 +1090,7 @@ public class elHotel extends JFrame {
 
 			});
 
-			boton1.addActionListener(new ActionListener() { // añadir a la lista
+			boton1.addActionListener(new ActionListener() { // aï¿½adir a la lista
 				public void actionPerformed(ActionEvent v) {
 
 					tripSb1.setBounds(50, 280, 100, 30);
@@ -1105,7 +1105,7 @@ public class elHotel extends JFrame {
 
 			});
 
-			boton2.addActionListener(new ActionListener() { // añadir a la lista
+			boton2.addActionListener(new ActionListener() { // aï¿½adir a la lista
 				public void actionPerformed(ActionEvent v) {
 
 					tripSc1.setBounds(50, 450, 100, 30);
@@ -1159,7 +1159,7 @@ public class elHotel extends JFrame {
 			setLocationRelativeTo(null);
 			zona.add(p); // espara que aparesca todo en el panel
 
-			salir = new JButton(new ImageIcon("atras.png")); // se les asigna su funcion a los constructores
+			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
 			Letrero = new JLabel("Room service");
 			boton2 = new JButton("Bebidas");
 			boton3 = new JButton("Aperitivos");
@@ -1317,7 +1317,7 @@ public class elHotel extends JFrame {
 			setLocationRelativeTo(null);
 			zona.add(p); // espara que aparesca todo en el panel
 
-			salir = new JButton(new ImageIcon("atras.png")); // se les asigna su funcion a los constructores
+			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
 			Letrero = new JLabel("Forma de Pago");
 			boton2 = new JButton("Efectivo");
 			boton3 = new JButton("Tarjeta");
@@ -1634,8 +1634,8 @@ public class elHotel extends JFrame {
 
 						ro1.write("-----------Tiked de pago----------------\n");
 						ro1.write("-----------Real Hotel Marcona-----------\n");
-						ro1.write("------Los mejores hoteles de México-----\n");
-						ro1.write("-------senñor@: " + nom.getText() + "-------\n");
+						ro1.write("------Los mejores hoteles de Mï¿½xico-----\n");
+						ro1.write("-------senï¿½or@: " + nom.getText() + "-------\n");
 						ro1.write("-------Numero de personas: " + noper.getText() + "-------\n");
 						ro1.write("-------Fecha de ingreso: " + fechin.getText() + "-------\n");
 						ro1.write("-------Fecha de salida: " + fechsal.getText() + "-------\n");
@@ -1685,8 +1685,8 @@ public class elHotel extends JFrame {
 
 						ro2.write("-----------Tiked de pago----------------\n");
 						ro2.write("-----------Real Hotel Marcona-----------\n");
-						ro2.write("------Los mejores hoteles de México-----\n");
-						ro2.write("-------senñor@: " + nom.getText() + "-----------------\n");
+						ro2.write("------Los mejores hoteles de Mï¿½xico-----\n");
+						ro2.write("-------senï¿½or@: " + nom.getText() + "-----------------\n");
 						ro2.write("-------Numero de personas: " + noper.getText() + "-------\n");
 						ro2.write("-------Fecha de ingreso: " + fechin.getText() + "-------\n");
 						ro2.write("-------Fecha de salida: " + fechsal.getText() + "-------\n");
