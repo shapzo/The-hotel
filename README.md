@@ -1,5 +1,5 @@
 # The-hotel
-Administration interface of a hotel, in java
+This is a hotel administration interface, in which it is possible to purchase services and calculate their price
 
 #Screenshot
 
