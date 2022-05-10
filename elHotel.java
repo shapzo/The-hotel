@@ -1,42 +1,22 @@
-package POO;
-
-/* paneles color negro *
- * paneles centrados al centro *
- * fuentes usadas Tahoma, Segoe UI Semibold, Lucida Console, Candara Regular *
- * imagenes con un tama�o no mayor a -300 px,  100 px- salvo algunas ecepciones *
- * paneles centralisados y sin posibilidad de redimensionarse -esto se hace para que no pierda estetica el programa- *
- */
-
-import java.awt.Checkbox;
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.awt.event.ItemEvent;
-import java.awt.event.ItemListener;
+import java.awt.*;
+import java.awt.event.*;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-
-import javax.swing.ButtonGroup;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
-import javax.swing.JRadioButton;
-import javax.swing.JTextField;
+import javax.swing.*;
 
 public class elHotel extends JFrame {
-	/* variables de los cuartos */
+	
+	/* *
+	* room variables *
+	* */
 	ButtonGroup grupoDeBotones = new ButtonGroup();
 	Checkbox cuartoA1 = new Checkbox("Sencillo");
 	Checkbox cuartoA2 = new Checkbox("Doble");
 	Checkbox cuartoA3 = new Checkbox("Suit");
 
 	/*
-	 * variables de la reservacion del cuarto *
+	 * room reservation variables *
 	 */
 	JLabel Nom;
 	JLabel NoPer;
@@ -50,64 +30,72 @@ public class elHotel extends JFrame {
 	JTextField fechsal;
 
 	/*
-	 * variables del restaurante*
+	 * restaurant variables *
 	 */
-	Checkbox a1 = new Checkbox("Vino Espumoso Lunato Lambrusco Rosado - 750 ml - 750$");
-	Checkbox a2 = new Checkbox("Vino Tinto Campo Viejo Gran Reserva Rioja - 750 ml - 1750$");
-	Checkbox a3 = new Checkbox("Oporto Royal 10 A�os - 750 ml - 3860$");
-	Checkbox a4 = new Checkbox("Whisky Chivas Regal 12 a�os - 750 ml - 6380$");
-	Checkbox a5 = new Checkbox("Brandy Gran Duque D Alba - 700 ml - 10580$");
-	Checkbox b1 = new Checkbox("Empanadas - 100$");
-	Checkbox b2 = new Checkbox("Jugo de carne - 300$");
-	Checkbox b3 = new Checkbox("Ensaladas - 100$");
-	Checkbox b4 = new Checkbox("Milanesas - 150$");
-	Checkbox b5 = new Checkbox("Postre italiano de la Nonna - 500$");
-	Checkbox c1 = new Checkbox("Filete T-Bone/Porterhouse - 1500$");
-	Checkbox c2 = new Checkbox("Bife Ancho (Rib Eye Steak) - 3400$");
-	Checkbox c3 = new Checkbox("Asado de Tira (Back Ribs) - 2600$");
+	Checkbox a1 = new Checkbox("Lunato Lambrusco Rosé Sparkling Wine 750$");
+	Checkbox a2 = new Checkbox("Red Wine Campo Viejo Great Reserve Rioja 1750$");
+	Checkbox a3 = new Checkbox("Port Royal 10 Years 3860$");
+	Checkbox a4 = new Checkbox("Whiskey Chivas Regal 12 years 6380$");
+	Checkbox a5 = new Checkbox("Brandy Gran Duque D Alba 10580$");
+	Checkbox b1 = new Checkbox("Patty - 100$");
+	Checkbox b2 = new Checkbox("Meat juice - 300$");
+	Checkbox b3 = new Checkbox("Salads - 100$");
+	Checkbox b4 = new Checkbox("Simple cut of meat - 150$");
+	Checkbox b5 = new Checkbox("Nonna's Italian Dessert - 500$");
+	Checkbox c1 = new Checkbox("T-Bone/Porterhouse Steak - 1500$");
+	Checkbox c2 = new Checkbox("Rib Eye Steak - 3400$");
+	Checkbox c3 = new Checkbox("Back Ribs - 2600$");
 	Checkbox c4 = new Checkbox("Wagyu - 5500$");
 	Checkbox c5 = new Checkbox("Kobe - 10000$");
 
-	/* variables de la guarderia */
+	/* 
+	 * nursery variables *
+	 */
 
-	ButtonGroup grupoDeBotonesguarderia = new ButtonGroup(); // se inicializan las variables
-	Checkbox guarderiaA1 = new Checkbox("1 a 5 ni�os"); // el static es para poder llamar los valores que se guardan en
-														// ellos
-	Checkbox guarderiaA2 = new Checkbox("5 ni�os o mas");
-	Checkbox guarderiaA3 = new Checkbox("1 a 3 a�os de edad");
-	Checkbox guarderiaA4 = new Checkbox("4 a 7 a�os de edad");
-	Checkbox guarderiaA5 = new Checkbox("7 a 11 a�os de edad");
+	ButtonGroup grupoDeBotonesguarderia = new ButtonGroup();
+	Checkbox guarderiaA1 = new Checkbox("1 to 5 children");
+														
+	Checkbox guarderiaA2 = new Checkbox("5 children or more");
+	Checkbox guarderiaA3 = new Checkbox("1 to 3 years old");
+	Checkbox guarderiaA4 = new Checkbox("4 to 7 years old");
+	Checkbox guarderiaA5 = new Checkbox("7 to 11 years old");
 
-	/* variables de los trips Fam */
+	/* 
+	 * variables trips Fam * 
+	 */
+
 	ButtonGroup grupoDeTrips = new ButtonGroup();
-	Checkbox tripSa1 = new Checkbox("2 horas");
-	Checkbox tripSa2 = new Checkbox("5 horas");
-	Checkbox tripSa3 = new Checkbox("8 horas");
+	Checkbox tripSa1 = new Checkbox("2 hours");
+	Checkbox tripSa2 = new Checkbox("5 hours");
+	Checkbox tripSa3 = new Checkbox("8 hours");
 
-	Checkbox tripSb1 = new Checkbox("2 horas");
-	Checkbox tripSb2 = new Checkbox("5 horas");
-	Checkbox tripSb3 = new Checkbox("8 horas");
+	Checkbox tripSb1 = new Checkbox("2 hours");
+	Checkbox tripSb2 = new Checkbox("5 hours");
+	Checkbox tripSb3 = new Checkbox("8 hours");
 
-	Checkbox tripSc1 = new Checkbox("2 horas");
-	Checkbox tripSc2 = new Checkbox("5 horas");
-	Checkbox tripSc3 = new Checkbox("8 horas");
+	Checkbox tripSc1 = new Checkbox("2 hours");
+	Checkbox tripSc2 = new Checkbox("5 hours");
+	Checkbox tripSc3 = new Checkbox("8 hours");
 
-	/* variables de romm service */
-	ButtonGroup grupoDeBotonesRomm = new ButtonGroup(); // se inicializan las variables
-	Checkbox RomMa1 = new Checkbox("Tequila"); // el static es para poder llamar los valores que se guardan en ellos
+	/* 
+	 * romm service variables *
+	 */
+
+	ButtonGroup grupoDeBotonesRomm = new ButtonGroup();
+	Checkbox RomMa1 = new Checkbox("Tequila");
 	Checkbox RomMa2 = new Checkbox("Wisky");
 	Checkbox RomMa3 = new Checkbox("Pau Pau");
 
 	Checkbox RomMb1 = new Checkbox("Nachos");
-	Checkbox RomMb2 = new Checkbox("Canape de cangrejo");
+	Checkbox RomMb2 = new Checkbox("Crab canape");
 	Checkbox RomMb3 = new Checkbox("Nachos");
 
 	Checkbox RomMc1 = new Checkbox("Marihuna");
-	Checkbox RomMc2 = new Checkbox("Hongos");
-	Checkbox RomMc3 = new Checkbox("Condones y lubricantes");
+	Checkbox RomMc2 = new Checkbox("Hallucinogenic mushrooms");
+	Checkbox RomMc3 = new Checkbox("Condoms and lubricants");
 
 	/****************************************************************/
-	double res = 0; // se inicializa a cero
+	double res = 0;
 	public JPanel p = new JPanel();
 	protected String[] servicios;
 
@@ -129,44 +117,43 @@ public class elHotel extends JFrame {
 		zona.add(p);
 
 		etiqueta = new JLabel(new ImageIcon("Images/logo.jpg"));
-		etiqueta1 = new JLabel("Usuario");
+		etiqueta1 = new JLabel("User");
 		campo = new JTextField();
 
-		boton = new JButton(" OK "); // hay k poner imagenes alucivas
-		boton1 = new JButton("Limpiar"); // para usar el formato PNG se ponen dobles diagonales
+		boton = new JButton(" OK ");
+		boton1 = new JButton("Clean");
 
 		/************** personalisacion *****************/
 		etiqueta1.setForeground(Color.lightGray);
-		etiqueta1.setFont(new java.awt.Font("Tahoma", 5, 15));
+		etiqueta1.setFont(new java.awt.Font("organo", 5, 15));
 
 		campo.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 		campo.setBackground(Color.black);
-		campo.setFont(new java.awt.Font("Segoe UI Semibold", 3, 14));
+		campo.setFont(new java.awt.Font("comfortaa", 3, 14));
 		campo.setForeground(Color.white);
 
-		boton.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+		boton.setFont(new java.awt.Font("comfortaa", 4, 15));
 		boton.setBackground(new java.awt.Color(140, 149, 153));
 
-		boton1.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+		boton1.setFont(new java.awt.Font("comfortaa", 4, 15));
 		boton1.setBackground(new java.awt.Color(140, 149, 153));
 
 		/******** posicion de los elementos ***************/
-		boton.setBounds(150, 440, 70, 30); // hay k acomodar
+		boton.setBounds(150, 440, 70, 30);
 		boton1.setBounds(250, 440, 100, 30);
 
 		etiqueta.setBounds(150, 150, 200, 200); // imagen de logo
 		etiqueta1.setBounds(220, 360, 150, 30); // usuario
 		campo.setBounds(150, 400, 200, 25); // pa k llene el usuario
 
-		p.add(boton); // se agregan los botones al panel
+		p.add(boton);
 		p.add(boton1);
 		p.add(etiqueta);
 		p.add(etiqueta1);
 		p.add(campo);
 
-		boton.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-														// usando solo botones
-			public void actionPerformed(ActionEvent v) { // se crea la clase o el evento
+		boton.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent v) { 
 				/* DECLARA VARIABLE CADENA */
 
 				String cad1 = campo.getText();
@@ -175,23 +162,21 @@ public class elHotel extends JFrame {
 				if (cad1.compareTo(s1) == 0)/* COMPARA SI LA CLAVE ES CORRECTA */
 				{
 					JOptionPane.showMessageDialog(null,
-							"Contrase�a correcta ");/* SI LA CLAVE ES INCORRECTA TERMINA EL PROGRAMA */
+							" Correct password ");/* SI LA CLAVE ES INCORRECTA TERMINA EL PROGRAMA */
 					servicios abrir = new servicios(); // se manda a llamar a la clase servicios
 					abrir.main(servicios);
 				} // fin
 				else {
-					JOptionPane.showMessageDialog(null, "Contase�a incorrecta ");
+					JOptionPane.showMessageDialog(null, " Incorrect password ");
 				}
 
 			}
 		});
 
-		boton1.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-														// usando solo botones
-			public void actionPerformed(ActionEvent m) { // se crea la clase o el evento
+		boton1.addActionListener(new ActionListener() { 
+			public void actionPerformed(ActionEvent m) { 
 				campo.setText(null);
-				JOptionPane.showMessageDialog(null, "Se a borrado satisfactoriamente"); // con esto se muestra un cuadro
-																						// de dialogo
+				JOptionPane.showMessageDialog(null, "Successfully erased");
 			}
 		});
 
@@ -200,7 +185,7 @@ public class elHotel extends JFrame {
 	public class servicios extends JFrame {
 
 		ButtonGroup grupoDeBotones = new ButtonGroup();
-		JButton boton; // botones pra ir a las otras ventanas
+		JButton boton; 
 		JButton boton1;
 		JButton boton2;
 		JButton boton3;
@@ -208,9 +193,9 @@ public class elHotel extends JFrame {
 		JButton boton5;
 		JButton boton6;
 
-		JButton salir; // boton para salir
+		JButton salir;
 
-		JLabel image; // pa las imagenes
+		JLabel image;
 		JLabel image1;
 		JLabel image2;
 		JLabel image3;
@@ -240,13 +225,13 @@ public class elHotel extends JFrame {
 
 			zona.add(p);
 
-			boton = new JButton("Reservacion");
-			boton1 = new JButton("Habitaciones");
-			boton2 = new JButton("Restaurante");
-			boton3 = new JButton("Guarderia");
+			boton = new JButton("Reservation");
+			boton1 = new JButton("Rooms");
+			boton2 = new JButton("Restaurant");
+			boton3 = new JButton("Nursery");
 			boton4 = new JButton("Trips");
 			boton5 = new JButton("Room service");
-			boton6 = new JButton("Forma de pago");
+			boton6 = new JButton("Payment method");
 
 			image = new JLabel(new ImageIcon("Images/reservacion.jpg"));
 			image1 = new JLabel(new ImageIcon("Images/habitacion.jpg"));
@@ -259,19 +244,19 @@ public class elHotel extends JFrame {
 			salir = new JButton(new ImageIcon("Images/atras.png"));
 
 			/****************** personalisacion ******************/
-			boton.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton.setBackground(new java.awt.Color(140, 141, 141));
-			boton1.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton1.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton1.setBackground(new java.awt.Color(140, 141, 141));
-			boton2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton2.setBackground(new java.awt.Color(140, 141, 141));
-			boton3.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton3.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton3.setBackground(new java.awt.Color(140, 141, 141));
-			boton4.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton4.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton4.setBackground(new java.awt.Color(140, 141, 141));
-			boton5.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton5.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton5.setBackground(new java.awt.Color(140, 141, 141));
-			boton6.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton6.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton6.setBackground(new java.awt.Color(140, 141, 141));
 
 			salir.setBorderPainted(false);
@@ -281,7 +266,7 @@ public class elHotel extends JFrame {
 
 			/******** posicion de los elementos ***************/
 
-			image.setBounds(50, 50, 300, 100); // se les da posicion a los elementos
+			image.setBounds(50, 50, 300, 100);
 			boton.setBounds(100, 155, 130, 40);
 
 			image1.setBounds(50, 200, 300, 100);
@@ -304,7 +289,7 @@ public class elHotel extends JFrame {
 
 			salir.setBounds(400, 600, 100, 50);
 
-			p.add(boton); // se agragan los elementos a la panel
+			p.add(boton);
 			p.add(boton1);
 			p.add(boton2);
 			p.add(boton3);
@@ -322,75 +307,60 @@ public class elHotel extends JFrame {
 
 			p.add(salir);
 
-			boton.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent v) {
 
-					reservacio abrir = new reservacio(); // se manda a llamar a la clase habitacion
-					abrir.main(reservacio); // se abre el panel
+					reservacio abrir = new reservacio(); 
+					abrir.main(reservacio); 
+				}
+			});
+
+			boton1.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent v) {
+					cuartos abrir = new cuartos(); 
+					abrir.main(cuartos); 
+				}
+			});
+
+			boton2.addActionListener(new ActionListener() { 
+				public void actionPerformed(ActionEvent v) {
+					restaurant abrir = new restaurant(); 
+					abrir.main(restaurant); 
 
 				}
 			});
 
-			boton1.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton3.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					cuartos abrir = new cuartos(); // se manda a llamar a la clase habitacion
-					abrir.main(cuartos); // se abre el panel
-
+					guarderia abrir = new guarderia(); 
+					abrir.main(guarderia); 
 				}
 			});
 
-			boton2.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton4.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					restaurant abrir = new restaurant(); // se manda a llamar a la clase habitacion
-					abrir.main(restaurant); // se abre el panel
-
+					trips abrir = new trips(); 
+					abrir.main(trips); 
 				}
 			});
 
-			boton3.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton5.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					guarderia abrir = new guarderia(); // se manda a llamar a la clase habitacion
-					abrir.main(guarderia); // se abre el panel
-
+					romm abrir = new romm(); 
+					abrir.main(romm); 
 				}
 			});
 
-			boton4.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton6.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					trips abrir = new trips(); // se manda a llamar a la clase habitacion
-					abrir.main(trips); // se abre el panel
-
+					pago abrir = new pago(); 
+					abrir.main(pago); 
 				}
 			});
 
-			boton5.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					romm abrir = new romm(); // se manda a llamar a la clase habitacion
-					abrir.main(romm); // se abre el panel
-
-				}
-			});
-
-			boton6.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
-				public void actionPerformed(ActionEvent v) {
-					pago abrir = new pago(); // se manda a llamar a la clase habitacion
-					abrir.main(pago); // se abre el panel
-
-				}
-			});
-
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
-				public void actionPerformed(ActionEvent v) {
-					dispose(); // para regresar al estado anterior
-
+					dispose();
 				}
 			});
 
@@ -407,7 +377,7 @@ public class elHotel extends JFrame {
 
 	public class cuartos extends JFrame {
 
-		Container contenedor; // se inicializan las variables
+		Container contenedor;
 		JPanel panel;
 
 		JLabel letrero;
@@ -422,36 +392,34 @@ public class elHotel extends JFrame {
 
 		public cuartos() {
 
-			// DELCARACION DE PANELES
-			setTitle("Habitaciones Real Hotel"); // se le da nombre al panel o ventana
-			setSize(550, 700); // se le otorgan las dimenciones
-			p.setBackground(Color.black); // se le da color al panel en este caso es negro
-			p.setLayout(null); // se inicia en null
-			Container zona = getContentPane(); // constructor y todo lo que aparece en el panel
+			setTitle("Habitaciones Real Hotel"); 
+			setSize(550, 700); 
+			p.setBackground(Color.black); 
+			p.setLayout(null); 
+			Container zona = getContentPane(); 
 			setLocationRelativeTo(null);
 
-			zona.add(p); // espara que aparesca todo en el panel
+			zona.add(p); 
 
 			letrero = new JLabel("Habitaciones");
 
-			image = new JLabel(new ImageIcon("Images/cuarto1.jpg")); // se crean los constructores y se les asigna su funcion
-																// si son
-			image1 = new JLabel(new ImageIcon("Images/cuarto2.jpg")); // imagenes o dicen informacion
+			image = new JLabel(new ImageIcon("Images/cuarto1.jpg")); 
+			image1 = new JLabel(new ImageIcon("Images/cuarto2.jpg")); 
 			image2 = new JLabel(new ImageIcon("Images/cuarto3.png"));
 			salir = new JButton(new ImageIcon("Images/atras.png"));
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
-			letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
 			cuartoA1.setForeground(Color.WHITE);
-			cuartoA1.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			cuartoA1.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			cuartoA2.setForeground(Color.WHITE);
-			cuartoA2.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			cuartoA2.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			cuartoA3.setForeground(Color.WHITE);
-			cuartoA3.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			cuartoA3.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			salir.setBorderPainted(false);
 			salir.setContentAreaFilled(false);
@@ -462,20 +430,19 @@ public class elHotel extends JFrame {
 
 			letrero.setBounds(50, 5, 350, 40);
 
-			cuartoA1.setBounds(50, 100, 150, 40); // se les da posicion a los elementos en el panel
+			cuartoA1.setBounds(50, 100, 150, 40); 
 			cuartoA2.setBounds(50, 250, 100, 40);
 			cuartoA3.setBounds(50, 400, 120, 40);
 
 			salir.setBounds(250, 550, 100, 50);
 
-			p.add(cuartoA1); // se agregan los elementos al panel
+			p.add(cuartoA1); 
 			p.add(cuartoA2);
 			p.add(cuartoA3);
 			p.add(salir);
 			p.add(letrero);
 
-			cuartoA1.addItemListener(new ItemListener() { // se usa el ItemListener con sus metodos abstractos peros
-															// usando solo checkbox
+			cuartoA1.addItemListener(new ItemListener() { 
 				public void itemStateChanged(ItemEvent v) {
 
 					p.add(image); // se agrega al panel
@@ -507,8 +474,7 @@ public class elHotel extends JFrame {
 				}
 			});
 
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent evt) {
 					dispose(); // es para cerrar el panel
 				}
@@ -531,7 +497,7 @@ public class elHotel extends JFrame {
 		JLabel Mascota;
 
 		ButtonGroup a = new ButtonGroup();
-		JRadioButton a1 = new JRadioButton("Si", false);
+		JRadioButton a1 = new JRadioButton("Yes", false);
 		JRadioButton a2 = new JRadioButton("No", false);
 
 		JButton Salir;
@@ -548,14 +514,14 @@ public class elHotel extends JFrame {
 
 			zona.add(p);
 
-			letrero = new JLabel("Reservacion de cuartos");
+			letrero = new JLabel("Room reservation");
 
-			Nom = new JLabel("Nombre: ");
-			NoPer = new JLabel("Apellido: ");
-			FechIni = new JLabel("Fecha de inicio: ");
-			FechSal = new JLabel("Fecha de salida: ");
-			Origen = new JLabel("Origen del huesped: ");
-			Mascota = new JLabel("Trae alguna mascota: ");
+			Nom = new JLabel("Name: ");
+			NoPer = new JLabel("Last Name: ");
+			FechIni = new JLabel("Satrt date: ");
+			FechSal = new JLabel("Departure date: ");
+			Origen = new JLabel("Guest Origin: ");
+			Mascota = new JLabel("Bring a pet: ");
 
 			nom = new JTextField();
 			noper = new JTextField();
@@ -567,56 +533,56 @@ public class elHotel extends JFrame {
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
-			letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
 			Nom.setForeground(Color.WHITE);
-			Nom.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			Nom.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			nom.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 			nom.setBackground(Color.black);
-			nom.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			nom.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			nom.setForeground(Color.white);
 
 			NoPer.setForeground(Color.WHITE);
-			NoPer.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			NoPer.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			noper.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 			noper.setBackground(Color.black);
-			noper.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			noper.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			noper.setForeground(Color.white);
 
 			FechIni.setForeground(Color.WHITE);
-			FechIni.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			FechIni.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			fechin.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 			fechin.setBackground(Color.black);
-			fechin.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			fechin.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			fechin.setForeground(Color.white);
 
 			FechSal.setForeground(Color.WHITE);
-			FechSal.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			FechSal.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			fechsal.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 			fechsal.setBackground(Color.black);
-			fechsal.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			fechsal.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			fechsal.setForeground(Color.white);
 
 			Origen.setForeground(Color.WHITE);
-			Origen.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			Origen.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			Orig.setBorder(new javax.swing.border.LineBorder(Color.gray, 3, true));
 			Orig.setBackground(Color.black);
-			Orig.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			Orig.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			Orig.setForeground(Color.white);
 
 			Mascota.setForeground(Color.WHITE);
-			Mascota.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			Mascota.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			a1.setForeground(Color.black);
-			a1.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			a1.setFont(new java.awt.Font("alba regular", 4, 14));
 			a1.setBackground(new java.awt.Color(168, 170, 171));
 			a2.setForeground(Color.black);
-			a2.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			a2.setFont(new java.awt.Font("alba regular", 4, 14));
 			a2.setBackground(new java.awt.Color(168, 170, 171));
 
 			Salir.setBorderPainted(false);
@@ -682,9 +648,9 @@ public class elHotel extends JFrame {
 
 		ButtonGroup grupoDeBotonesRestaurante = new ButtonGroup(); // se inicializan las variables y en este caso se
 																	// aplican valores
-		JButton a = new JButton("Vinos y Licores");
-		JButton b = new JButton("Platillos");
-		JButton c = new JButton("Cortes De Carne");
+		JButton a = new JButton("Wines and Spirits");
+		JButton b = new JButton("Food dishes");
+		JButton c = new JButton("Meat cuts");
 
 		JButton image;// imagenes
 		JButton image1;
@@ -693,78 +659,77 @@ public class elHotel extends JFrame {
 
 		JButton x = new JButton(new ImageIcon("Images/atras.png"));
 
-		JLabel etq1 = new JLabel("desayuno");
+		JLabel etq1 = new JLabel("Breakfast");
 
 		public JPanel p = new JPanel();
 
 		public restaurant() {
 
-			setTitle("Restaurante Real Hotel"); // asignaciion del titulo
-			setSize(650, 650); // tama�o del panel
-			p.setBackground(Color.black); // se le da color al panel
+			setTitle("Real Hotel Restaurant");
+			setSize(650, 650);
+			p.setBackground(Color.black);
 			setLocationRelativeTo(null);
 			;
-			p.setLayout(null); // no deve de haver nada fuera del panel
+			p.setLayout(null);
 
 			Container zona = getContentPane();
 
-			zona.add(p); // zona es para hacer referencia al contenido y signofica a�adir al panel el
-// contenido de zona
+			zona.add(p);
 
-			image = new JButton(new ImageIcon("Images/restor1.jpg")); // se le asignan valores a los elementos
+			image = new JButton(new ImageIcon("Images/restor1.jpg"));
 			image1 = new JButton(new ImageIcon("Images/restor2.jpg"));
 			image2 = new JButton(new ImageIcon("Images/restor3.jpg"));
 
-			letrero = new JLabel("Restaurante");
+			letrero = new JLabel("Restaurant");
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
-			letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
 			a.setForeground(Color.WHITE);
-			a.setFont(new java.awt.Font("Tahoma", 3, 15));
+			a.setFont(new java.awt.Font("organo", 3, 15));
 			a.setBackground(new java.awt.Color(140, 141, 141));
 
 			b.setForeground(Color.WHITE);
-			b.setFont(new java.awt.Font("Tahoma", 3, 15));
+			b.setFont(new java.awt.Font("organo", 3, 15));
 			b.setBackground(new java.awt.Color(140, 141, 141));
 
 			c.setForeground(Color.WHITE);
-			c.setFont(new java.awt.Font("Tahoma", 3, 15));
+			c.setFont(new java.awt.Font("organo", 3, 15));
 			c.setBackground(new java.awt.Color(140, 141, 141));
 
 			a1.setForeground(Color.WHITE);
-			a1.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			a1.setFont(new java.awt.Font("alba regular", 4, 12));
 			a2.setForeground(Color.WHITE);
-			a2.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			a2.setFont(new java.awt.Font("alba regular", 4, 12));
 			a3.setForeground(Color.WHITE);
-			a3.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			a3.setFont(new java.awt.Font("alba regular", 4, 12));
 			a4.setForeground(Color.WHITE);
-			a4.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			a4.setFont(new java.awt.Font("alba regular", 4, 12));
 			a5.setForeground(Color.WHITE);
-			a5.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			a5.setFont(new java.awt.Font("alba regular", 4, 12));
 
 			c1.setForeground(Color.WHITE);
-			c1.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			c1.setFont(new java.awt.Font("alba regular", 4, 12));
 			c2.setForeground(Color.WHITE);
-			c2.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			c2.setFont(new java.awt.Font("alba regular", 4, 12));
 			c3.setForeground(Color.WHITE);
-			c3.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			c3.setFont(new java.awt.Font("alba regular", 4, 12));
 			c4.setForeground(Color.WHITE);
-			c4.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			c4.setFont(new java.awt.Font("alba regular", 4, 12));
 			c5.setForeground(Color.WHITE);
-			c5.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			c5.setFont(new java.awt.Font("alba regular", 4, 12));
 
 			b1.setForeground(Color.WHITE);
-			b1.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			b1.setFont(new java.awt.Font("alba regular", 4, 12));
 			b2.setForeground(Color.WHITE);
-			b2.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			b2.setFont(new java.awt.Font("alba regular", 4, 12));
 			b3.setForeground(Color.WHITE);
-			b3.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			b3.setFont(new java.awt.Font("alba regular", 4, 12));
 			b4.setForeground(Color.WHITE);
-			b4.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			b4.setFont(new java.awt.Font("alba regular", 4, 12));
 			b5.setForeground(Color.WHITE);
-			b5.setFont(new java.awt.Font("Candara Regular", 4, 12));
+			b5.setFont(new java.awt.Font("alba regular", 4, 12));
 
 			x.setBorderPainted(false);
 			x.setContentAreaFilled(false);
@@ -816,7 +781,7 @@ public class elHotel extends JFrame {
 // usando solo botones
 				public void actionPerformed(ActionEvent v) {
 					p.add(image1);
-					p.add(b1); // se agragan al panel
+					p.add(b1); 
 					p.add(b2);
 					p.add(b3);
 					p.add(b4);
@@ -834,7 +799,7 @@ public class elHotel extends JFrame {
 			c.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
 // usando solo botones
 				public void actionPerformed(ActionEvent v) {
-					p.add(image2); // se agragan al panel
+					p.add(image2); 
 					p.add(c1);
 					p.add(c2);
 					p.add(c3);
@@ -878,41 +843,41 @@ public class elHotel extends JFrame {
 		public JPanel p = new JPanel();
 
 		public guarderia() {
-			// DELCARACION DE PANELES
-			setTitle("Guarderias Real Hotel"); // se le da nombre al panel o ventana
-			setSize(530, 600); // se le otorgan las dimenciones
-			p.setBackground(Color.black); // se le da color al panel en este caso es negro
-			p.setLayout(null); // se inicia en null
-			Container zona = getContentPane(); // constructor y todo lo que aparece en el panel
+			
+			setTitle("Real Hotel Nurseries"); 
+			setSize(530, 600); 
+			p.setBackground(Color.black); 
+			p.setLayout(null); 
+			Container zona = getContentPane(); 
 			// para que aparesca el panel
 			setLocationRelativeTo(null);
-			zona.add(p); // espara que aparesca todo en el panel
+			zona.add(p); 
 
 			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
-			Letrero = new JLabel("Horario de 8pm a 6am");
-			boton2 = new JButton("No de ni�os");
-			boton3 = new JButton("Edad de los ni�os");
+			Letrero = new JLabel("Hours from 8pm to 6am");
+			boton2 = new JButton("Number of children");
+			boton3 = new JButton("Age of children");
 
 			/************** personalisacion *****************/
 			Letrero.setForeground(Color.lightGray);
-			Letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			Letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
-			boton2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton2.setBackground(new java.awt.Color(140, 141, 141));
 
-			boton3.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton3.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton3.setBackground(new java.awt.Color(140, 141, 141));
 
 			guarderiaA1.setForeground(Color.WHITE);
-			guarderiaA1.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			guarderiaA1.setFont(new java.awt.Font("alba regular", 3, 14));
 			guarderiaA2.setForeground(Color.WHITE);
-			guarderiaA2.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			guarderiaA2.setFont(new java.awt.Font("alba regular", 3, 14));
 			guarderiaA3.setForeground(Color.WHITE);
-			guarderiaA3.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			guarderiaA3.setFont(new java.awt.Font("alba regular", 3, 14));
 			guarderiaA4.setForeground(Color.WHITE);
-			guarderiaA4.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			guarderiaA4.setFont(new java.awt.Font("alba regular", 3, 14));
 			guarderiaA5.setForeground(Color.WHITE);
-			guarderiaA5.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			guarderiaA5.setFont(new java.awt.Font("alba regular", 3, 14));
 
 			salir.setBorderPainted(false);
 			salir.setContentAreaFilled(false);
@@ -921,46 +886,43 @@ public class elHotel extends JFrame {
 
 			/******** posicion de los elementos ***************/
 
-			p.add(salir); // se agragan al panel
+			p.add(salir); 
 			p.add(Letrero);
 			p.add(boton2);
 			p.add(boton3);
 
-			Letrero.setBounds(100, 30, 350, 70); // se les da posicion en el panel
+			Letrero.setBounds(100, 30, 350, 70); 
 			boton2.setBounds(50, 150, 150, 40);
 			boton3.setBounds(300, 150, 180, 40);
 
 			salir.setBounds(200, 450, 100, 50);
 
-			boton2.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton2.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					p.add(guarderiaA1); // se agragan al panel
+					p.add(guarderiaA1); 
 					p.add(guarderiaA2);
-					guarderiaA1.setBounds(50, 210, 150, 20); // se les da posicion en el panel
+					guarderiaA1.setBounds(50, 210, 150, 20); 
 					guarderiaA2.setBounds(50, 260, 150, 20);
 
 				}
 			});
-			boton3.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton3.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					p.add(guarderiaA3); // se agragan al panel
+					p.add(guarderiaA3); 
 					p.add(guarderiaA4);
 					p.add(guarderiaA5);
-					guarderiaA3.setBounds(300, 210, 150, 20); // se les da posicion en el panel
+					guarderiaA3.setBounds(300, 210, 150, 20); 
 					guarderiaA4.setBounds(300, 260, 150, 20);
 					guarderiaA5.setBounds(300, 310, 150, 20);
 				}
 			});
 
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					dispose(); // es para cerrar la ventana
+					dispose(); 
 				}
 			});
 		}
@@ -1007,45 +969,45 @@ public class elHotel extends JFrame {
 			image1 = new JLabel(new ImageIcon("Images/trip2.jpg"));
 			image2 = new JLabel(new ImageIcon("Images/trip3.jpg"));
 
-			boton = new JButton("Globo"); // hay k poner imagenes alucivas
-			boton1 = new JButton("Camioneta"); // para usar el formato PNG se ponen dobles diagonales
-			boton2 = new JButton("Lancha");
+			boton = new JButton("Balloon");
+			boton1 = new JButton("Pickup truck");
+			boton2 = new JButton("Boat");
 
 			salir = new JButton(new ImageIcon("Images/atras.png"));
 
-			letrero = new JLabel("Trip�s Fam");
+			letrero = new JLabel("Trip's Fam");
 
 			/************** personalisacion *****************/
 			letrero.setForeground(Color.lightGray);
-			letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
-			boton.setFont(new java.awt.Font("Segoe UI Semibold", 3, 15));
+			boton.setFont(new java.awt.Font("comfortaa", 3, 15));
 			boton.setBackground(new java.awt.Color(140, 141, 141));
-			boton1.setFont(new java.awt.Font("Segoe UI Semibold", 3, 15));
+			boton1.setFont(new java.awt.Font("comfortaa", 3, 15));
 			boton1.setBackground(new java.awt.Color(140, 141, 141));
-			boton2.setFont(new java.awt.Font("Segoe UI Semibold", 3, 15));
+			boton2.setFont(new java.awt.Font("comfortaa", 3, 15));
 			boton2.setBackground(new java.awt.Color(140, 141, 141));
 
 			tripSa1.setForeground(Color.WHITE);
-			tripSa1.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSa1.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSa2.setForeground(Color.WHITE);
-			tripSa2.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSa2.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSa3.setForeground(Color.WHITE);
-			tripSa3.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSa3.setFont(new java.awt.Font("alba regular", 4, 14));
 
 			tripSb1.setForeground(Color.WHITE);
-			tripSb1.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSb1.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSb2.setForeground(Color.WHITE);
-			tripSb2.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSb2.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSb3.setForeground(Color.WHITE);
-			tripSb3.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSb3.setFont(new java.awt.Font("alba regular", 4, 14));
 
 			tripSc1.setForeground(Color.WHITE);
-			tripSc1.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSc1.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSc2.setForeground(Color.WHITE);
-			tripSc2.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSc2.setFont(new java.awt.Font("alba regular", 4, 14));
 			tripSc3.setForeground(Color.WHITE);
-			tripSc3.setFont(new java.awt.Font("Candara Regular", 4, 14));
+			tripSc3.setFont(new java.awt.Font("alba regular", 4, 14));
 
 			salir.setBorderPainted(false);
 			salir.setContentAreaFilled(false);
@@ -1120,8 +1082,7 @@ public class elHotel extends JFrame {
 
 			});
 
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent evt) {
 					dispose(); // es para cerrar el panel
 				}
@@ -1149,55 +1110,55 @@ public class elHotel extends JFrame {
 		public JPanel p = new JPanel();
 
 		public romm() {
-			// DELCARACION DE PANELES
-			setTitle("Room Service Real Hotel"); // se le da nombre al panel o ventana
-			setSize(770, 500); // se le otorgan las dimenciones
-			p.setBackground(Color.black); // se le da color al panel en este caso es negro
-			p.setLayout(null); // se inicia en null
-			Container zona = getContentPane(); // constructor y todo lo que aparece en el panel
+			
+			setTitle("Room Service Real Hotel"); 
+			setSize(770, 500); 
+			p.setBackground(Color.black); 
+			p.setLayout(null); 
+			Container zona = getContentPane(); 
 			// para que aparesca el panel
 			setLocationRelativeTo(null);
-			zona.add(p); // espara que aparesca todo en el panel
+			zona.add(p); 
 
 			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
 			Letrero = new JLabel("Room service");
-			boton2 = new JButton("Bebidas");
-			boton3 = new JButton("Aperitivos");
-			boton4 = new JButton("Recreativos");
+			boton2 = new JButton("Driks");
+			boton3 = new JButton("Appetizers");
+			boton4 = new JButton("Recreational");
 
 			/************** personalisacion *****************/
 			Letrero.setForeground(Color.lightGray);
-			Letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 30));
+			Letrero.setFont(new java.awt.Font("comfortaa", 5, 30));
 
-			boton2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton2.setBackground(new java.awt.Color(140, 141, 141));
 
-			boton3.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton3.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton3.setBackground(new java.awt.Color(140, 141, 141));
 
-			boton4.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton4.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton4.setBackground(new java.awt.Color(140, 141, 141));
 
 			RomMa1.setForeground(Color.WHITE);
-			RomMa1.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMa1.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMa2.setForeground(Color.WHITE);
-			RomMa2.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMa2.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMa3.setForeground(Color.WHITE);
-			RomMa3.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMa3.setFont(new java.awt.Font("alba regular", 3, 14));
 
 			RomMb1.setForeground(Color.WHITE);
-			RomMb1.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMb1.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMb2.setForeground(Color.WHITE);
-			RomMb2.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMb2.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMb3.setForeground(Color.WHITE);
-			RomMb3.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMb3.setFont(new java.awt.Font("alba regular", 3, 14));
 
 			RomMc1.setForeground(Color.WHITE);
-			RomMc1.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMc1.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMc2.setForeground(Color.WHITE);
-			RomMc2.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMc2.setFont(new java.awt.Font("alba regular", 3, 14));
 			RomMc3.setForeground(Color.WHITE);
-			RomMc3.setFont(new java.awt.Font("Candara Regular", 3, 14));
+			RomMc3.setFont(new java.awt.Font("alba regular", 3, 14));
 
 			salir.setBorderPainted(false);
 			salir.setContentAreaFilled(false);
@@ -1206,64 +1167,60 @@ public class elHotel extends JFrame {
 
 			/******** posicion de los elementos ***************/
 
-			p.add(salir); // se agragan al panel
+			p.add(salir); 
 			p.add(Letrero);
 			p.add(boton2);
 			p.add(boton3);
 			p.add(boton4);
 
-			Letrero.setBounds(200, 30, 350, 70); // se les da posicion en el panel
+			Letrero.setBounds(200, 30, 350, 70); 
 			boton2.setBounds(50, 150, 100, 50);
 			boton3.setBounds(290, 150, 150, 50);
 			boton4.setBounds(550, 150, 150, 50);
 
 			salir.setBounds(300, 370, 100, 50);
 
-			boton2.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton2.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					p.add(RomMa1); // se agragan al panel
+					p.add(RomMa1); 
 					p.add(RomMa2);
 					p.add(RomMa3);
-					RomMa1.setBounds(50, 210, 150, 20); // se les da posicion en el panel
+					RomMa1.setBounds(50, 210, 150, 20); 
 					RomMa2.setBounds(50, 260, 150, 20);
 					RomMa3.setBounds(50, 310, 150, 20);
 
 				}
 			});
 
-			boton3.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton3.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					p.add(RomMb1); // se agragan al panel
+					p.add(RomMb1); 
 					p.add(RomMb2);
 					p.add(RomMb3);
-					RomMb1.setBounds(290, 210, 150, 20); // se les da posicion en el panel
+					RomMb1.setBounds(290, 210, 150, 20); 
 					RomMb2.setBounds(290, 260, 150, 20);
 					RomMb3.setBounds(290, 310, 150, 20);
 				}
 			});
 
-			boton4.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			boton4.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
-					p.add(RomMc1); // se agragan al panel
+					p.add(RomMc1); 
 					p.add(RomMc2);
 					p.add(RomMc3);
-					RomMc1.setBounds(550, 210, 150, 20); // se les da posicion en el panel
+					RomMc1.setBounds(550, 210, 150, 20); 
 					RomMc2.setBounds(550, 260, 150, 20);
 					RomMc3.setBounds(550, 310, 150, 20);
 
 				}
 			});
 
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					dispose(); // es para cerrar la ventana
+					dispose(); 
 				}
 			});
 		}
@@ -1307,108 +1264,108 @@ public class elHotel extends JFrame {
 		public JPanel p = new JPanel();
 
 		public pago() {
-			// DELCARACION DE PANELES
-			setTitle("Forma de Pago Real Hotel"); // se le da nombre al panel o ventana
-			setSize(770, 600); // se le otorgan las dimenciones
-			p.setBackground(new java.awt.Color(54, 55, 56)); // se le da color al panel en este caso es negro
-			p.setLayout(null); // se inicia en null
-			Container zona = getContentPane(); // constructor y todo lo que aparece en el panel
+			
+			setTitle("Way to pay Real Hotel"); 
+			setSize(770, 600); 
+			p.setBackground(new java.awt.Color(54, 55, 56)); 
+			p.setLayout(null); 
+			Container zona = getContentPane(); 
 			// para que aparesca el panel
 			setLocationRelativeTo(null);
-			zona.add(p); // espara que aparesca todo en el panel
+			zona.add(p); 
 
 			salir = new JButton(new ImageIcon("Images/atras.png")); // se les asigna su funcion a los constructores
-			Letrero = new JLabel("Forma de Pago");
-			boton2 = new JButton("Efectivo");
-			boton3 = new JButton("Tarjeta");
+			Letrero = new JLabel("Way to pay");
+			boton2 = new JButton("Cash");
+			boton3 = new JButton("Card");
 
-			efec1 = new JLabel("Recibi");
+			efec1 = new JLabel("Receipt");
 			efe1 = new JTextField();
 
-			tarj1 = new JLabel("Ingresa el nombre del banco");
-			tarj2 = new JLabel("Ingresa el numero de tarjeta");
+			tarj1 = new JLabel("Enter the name of the bank");
+			tarj2 = new JLabel("Enter the card number");
 
 			tarjeti1 = new JTextField();
 			tarjeti2 = new JTextField();
 
 			total1 = new JButton("Total");
 			ToT1 = new JTextField();
-			tiked1 = new JButton("Imprimir Tiket");
-			Limpiar1 = new JButton("Limpiar");
+			tiked1 = new JButton("Print Ticket");
+			Limpiar1 = new JButton("Clean");
 
 			total2 = new JButton("Total");
 			ToT2 = new JTextField();
-			tiked2 = new JButton("Imprimir Tiket");
-			Limpiar2 = new JButton("Limpiar");
+			tiked2 = new JButton("Print Ticket");
+			Limpiar2 = new JButton("Clean");
 
 			/************** personalisacion *****************/
 			Letrero.setForeground(new java.awt.Color(1, 196, 134));
-			Letrero.setFont(new java.awt.Font("Segoe UI Semibold", 5, 32));
+			Letrero.setFont(new java.awt.Font("comfortaa", 5, 32));
 
-			boton2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton2.setBackground(new java.awt.Color(15, 75, 3));
 			boton2.setForeground(new java.awt.Color(107, 209, 176));
 
-			boton3.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			boton3.setFont(new java.awt.Font("comfortaa", 4, 15));
 			boton3.setBackground(new java.awt.Color(15, 75, 3));
 			boton3.setForeground(new java.awt.Color(107, 209, 176));
 
-			total1.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			total1.setFont(new java.awt.Font("comfortaa", 4, 15));
 			total1.setBackground(new java.awt.Color(134, 0, 0));
 			total1.setForeground(new java.awt.Color(2, 176, 36));
 
-			total2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			total2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			total2.setBackground(new java.awt.Color(134, 0, 0));
 			total2.setForeground(new java.awt.Color(2, 176, 36));
 
-			tiked1.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			tiked1.setFont(new java.awt.Font("comfortaa", 4, 15));
 			tiked1.setBackground(new java.awt.Color(255, 228, 0));
 			tiked1.setForeground(new java.awt.Color(102, 108, 130));
 
-			tiked2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			tiked2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			tiked2.setBackground(new java.awt.Color(255, 228, 0));
 			tiked2.setForeground(new java.awt.Color(102, 108, 130));
 
-			Limpiar1.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			Limpiar1.setFont(new java.awt.Font("comfortaa", 4, 15));
 			Limpiar1.setBackground(new java.awt.Color(13, 145, 202));
 			Limpiar1.setForeground(new java.awt.Color(3, 45, 64));
 
-			Limpiar2.setFont(new java.awt.Font("Segoe UI Semibold", 4, 15));
+			Limpiar2.setFont(new java.awt.Font("comfortaa", 4, 15));
 			Limpiar2.setBackground(new java.awt.Color(13, 145, 202));
 			Limpiar2.setForeground(new java.awt.Color(3, 45, 64));
 
 			efec1.setForeground(new java.awt.Color(232, 17, 144));
-			efec1.setFont(new java.awt.Font("Candara Regular", 4, 18));
+			efec1.setFont(new java.awt.Font("alba regular", 4, 18));
 
 			tarj1.setForeground(new java.awt.Color(232, 17, 144));
-			tarj1.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			tarj1.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			tarj2.setForeground(new java.awt.Color(232, 17, 144));
-			tarj2.setFont(new java.awt.Font("Candara Regular", 4, 15));
+			tarj2.setFont(new java.awt.Font("alba regular", 4, 15));
 
 			ToT1.setBorder(new javax.swing.border.LineBorder(Color.red, 3, true));
 			ToT1.setBackground(new java.awt.Color(126, 70, 0));
-			ToT1.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			ToT1.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			ToT1.setForeground(Color.magenta);
 
 			ToT2.setBorder(new javax.swing.border.LineBorder(Color.red, 3, true));
 			ToT2.setBackground(new java.awt.Color(126, 70, 0));
-			ToT2.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			ToT2.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			ToT2.setForeground(Color.magenta);
 
 			tarjeti1.setBorder(new javax.swing.border.LineBorder(Color.magenta, 3, true));
 			tarjeti1.setBackground(new java.awt.Color(131, 16, 220));
-			tarjeti1.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			tarjeti1.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			tarjeti1.setForeground(Color.yellow);
 
 			tarjeti2.setBorder(new javax.swing.border.LineBorder(Color.magenta, 3, true));
 			tarjeti2.setBackground(new java.awt.Color(131, 16, 220));
-			tarjeti2.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			tarjeti2.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			tarjeti2.setForeground(Color.yellow);
 
 			efe1.setBorder(new javax.swing.border.LineBorder(Color.magenta, 3, true));
 			efe1.setBackground(new java.awt.Color(131, 16, 220));
-			efe1.setFont(new java.awt.Font("Lucida Console", 3, 14));
+			efe1.setFont(new java.awt.Font("mononoki Nerd Font", 3, 14));
 			efe1.setForeground(Color.yellow);
 
 			salir.setBorderPainted(false);
@@ -1418,12 +1375,12 @@ public class elHotel extends JFrame {
 
 			/******** posicion de los elementos ***************/
 
-			p.add(salir); // se agragan al panel
+			p.add(salir); 
 			p.add(Letrero);
 			p.add(boton2);
 			p.add(boton3);
 
-			Letrero.setBounds(250, 20, 350, 70); // se les da posicion en el panel
+			Letrero.setBounds(250, 20, 350, 70); 
 			boton2.setBounds(70, 100, 100, 40);
 			boton3.setBounds(350, 100, 100, 40);
 
@@ -1616,7 +1573,7 @@ public class elHotel extends JFrame {
 			total1.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
 				// usando solo botones
 				public void actionPerformed(ActionEvent v) {
-					JOptionPane.showMessageDialog(null, "Descuento del 10% en presio total!!!");
+					JOptionPane.showMessageDialog(null, "10% discount on total price!!!");
 					double a, b;
 					a = res * 0.20;
 					b = res - a;
@@ -1627,7 +1584,7 @@ public class elHotel extends JFrame {
 			tiked1.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
 				// usando solo botones
 				public void actionPerformed(ActionEvent v) {
-					String ruta1 = "C:\\Users\\Rodrigo\\Desktop\\Tiked_de_pago_efectivo.txt";
+					String ruta1 = System.getProperties().getProperty("user.dir/tiked_1.txt", "tiked_1.txt");
 					try {
 						File arch1 = new File(ruta1);
 						FileWriter ro1 = new FileWriter(arch1, true);
@@ -1667,7 +1624,7 @@ public class elHotel extends JFrame {
 			total2.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
 // usando solo botones
 				public void actionPerformed(ActionEvent v) {
-					JOptionPane.showMessageDialog(null, "Descuento del 30% en presio total!!!");
+					JOptionPane.showMessageDialog(null, "30% discount on total price!!!");
 					double c, d;
 					c = res * 0.30;
 					d = res - c;
@@ -1678,7 +1635,7 @@ public class elHotel extends JFrame {
 			tiked2.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
 // usando solo botones
 				public void actionPerformed(ActionEvent v) {
-					String ruta2 = "C:\\Users\\Rodrigo\\Desktop\\Tiked_de_pago_tarjeta.txt";
+					String ruta2 = System.getProperties().getProperty("user.dir/tiked_2.txt", "tiked_2.txt");
 					try {
 						File arch2 = new File(ruta2);
 						FileWriter ro2 = new FileWriter(arch2, true);
@@ -1714,11 +1671,10 @@ public class elHotel extends JFrame {
 				}
 			});
 
-			salir.addActionListener(new ActionListener() { // se usa el ActionListener con sus metodos abstractos peros
-															// usando solo botones
+			salir.addActionListener(new ActionListener() { 
 				public void actionPerformed(ActionEvent v) {
 
-					dispose(); // es para cerrar la ventana
+					dispose(); 
 				}
 			});
 		}
